@@ -1,0 +1,40 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  row-gap: 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: #717171;
+
+  width: 50%;
+  border-radius: 20px;
+}
+.inputPassword {
+  width: 100%;
+  padding: 1%;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+}
+.inputPassword::selection {
+  background-color: #008ed3;
+}
+.inputCopyHolder {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 3%;
+}
+.inputRange {
+  width: 25%;
+}
+.copyButton {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.contentSet {
+  justify-content: space-evenly;
+}
