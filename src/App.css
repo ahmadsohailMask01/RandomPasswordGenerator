@@ -38,3 +38,22 @@
 .contentSet {
   justify-content: space-evenly;
 }
+@media screen and (max-width: 768px) {
+  .mainDiv {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .inputCopyHolder {
+    width: 100%;
+    flex-direction: column;
+    row-gap: 5px;
+    text-align: center;
+  }
+  .inputRange {
+    width: 98%;
+  }
+  .inputPassword {
+    width: 98%;
+  }
+}
