@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { LuRefreshCcw } from "react-icons/lu";
 import "./App.css";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   const [allowNumber, setAllowNumber] = useState(false);
   const [allowChar, setAllowChar] = useState(false);
   const getPassword = useRef(null);
+  const [refresh, setRefresh] = useState(true);
   const [buttonColor, setButtonColor] = useState("#23acf2");
 
   const copyPassword = () => {
@@ -16,6 +18,7 @@ function App() {
   };
 
   const generateRandomPassword = useCallback(() => {
+    setButtonColor("#23acf2");
     let password = "";
     let string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     let numbers = "0123456789";
@@ -35,7 +38,7 @@ function App() {
 
   useEffect(() => {
     generateRandomPassword();
-  }, [length, allowNumber, allowChar]);
+  }, [length, allowNumber, allowChar, refresh]);
 
   return (
     <>
@@ -50,6 +53,20 @@ function App() {
             value={password}
             ref={getPassword}
           />
+          <button
+            className="copyButton"
+            onClick={() => {
+              setRefresh((pendingRefresh) => {
+                return !pendingRefresh;
+              });
+            }}
+            style={{
+              backgroundColor: `#23acf2`,
+              alignItems: `center`,
+            }}
+          >
+            <LuRefreshCcw style={{ color: `white` }} />
+          </button>
           <button
             onClick={copyPassword}
             className="copyButton"
